@@ -5,8 +5,41 @@ body {
     margin: 0;
     padding: 0;
   }
+
+   /* EFECTO DE CAMBIO DE COLORES PARA EL HOVER */
+
+  @keyframes fondoCromatico {
+    0% {
+      background-color: #1a1a1a; /* negro grafito */
+    }
+    25% {
+      background-color: #3d5afe; /* azul cobalto */
+    }
+    50% {
+      background-color: #c62828; /* rojo sangre */
+    }
+    75% {
+      background-color: #bfa55d; /* dorado antiguo */
+    }
+    100% {
+      background-color: #1a1a1a; /* vuelve al inicio */
+    }
+  }
   
-  header, footer {
+  header {
+    background-image: url(images/banner.png);
+    background-position: center;
+    
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: 'Viaoda Libre';
+  border-bottom: 4px solid #c62828;
+  }
+
+
+  
+  footer {
     background-color: #3d5afe;
   color: white;
   text-align: center;
@@ -14,7 +47,7 @@ body {
   font-family: 'Viaoda Libre';
   border-bottom: 4px solid #c62828;
   }
-  
+
   main {
     padding: 100px;
   }
@@ -31,10 +64,25 @@ body {
   .band h2 {
     color: #bfa55d;
    font-family: 'Viaoda Libre';
-   text-align: center;
+   text-align:left;
    
   }
 
+  .band:hover {
+    
+    transform: scale(1.03);  /* aumenta de tamaño */
+    /*  transform: translateY(-5px);  eleva con efecto hacia arriba*/
+    transition: all 0.5s ease-in-out; /* efecto smooth */
+  
+  }
+
+  .vinyl-card:hover {
+    animation: fondoCromatico 10s infinite linear;
+  }
+
+  
+
+  
   img {
     width: 800px;
     height: 400px;
@@ -43,5 +91,11 @@ body {
     display: block;
     margin: 10px auto;
   }
+  
+  
+  
+  
+  
+  
   
   
