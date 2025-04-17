@@ -9,15 +9,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
 
 </head>
 <body>
+
+  <div class="intro" id="intro">
+    <h1 class="typewriter">Ozymandias</h1>
+  </div>
+
+  <!-- <div class="vinilo-psicodelico"></div>   para un vinilo girando con color -->
+
+
+
     <header>
         <h1> The Holy Trinity</h1>
         <p>Absolute masters in their genre </p>
       </header>
     
+
+      <div id="collageZone" class="collage"></div>
+<button onclick="generateCollage()">🎲 Generar Collage</button>
+
+
+<div class="vinyl-player" id="vinylPlayer">
+  <img src="images/abbeyroad.jpg" alt="Vinilo girando" class="vinyl spin" id="vinylDisc">
+  <button id="toggleBtn">▶ Play</button>
+  <p id="trackTitle">Abbey Road</p>
+  <audio id="audioTrack" src="sounds/abbeyroad.mp3"></audio>
+</div>
+
+
+
       <main>
         <section class="band">
           <h2>🎸 The Beatles</h2>
@@ -39,8 +63,24 @@
       </main>
     
       <footer>
-        <p>Hecho por mí con 💙 mientras aprendo HTML y CSS</p>
+        <p>Lorem ipsu
+        </p>
       </footer>
-    
+
+
+
+      <script src="animaciones.js"></script>
+
+
+
+    <script>
+  window.addEventListener('load', () => {
+    const intro = document.getElementById('intro');
+    setTimeout(() => {
+      intro.classList.add('fade-out');
+    }, 1000); // Desvanece después de 1 segundos
+  });
+</script>
+
 </body>
 </html>

@@ -6,6 +6,60 @@ body {
     padding: 0;
   }
 
+
+  .intro {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #3d5afe, #c62828);
+    background-size: 400% 400%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'VT323';
+    font-size: 2em;
+    z-index: 1000;
+    animation-fill-mode:none;
+    transition: opacity 1s ease;
+  }
+
+
+  .typewriter {
+    width: 9ch;                        /* Fijamos el ancho exacto */
+    overflow: hidden;                  
+
+    white-space: nowrap;
+    letter-spacing: 2px;
+    animation: typing 2.5s steps(16, end), blink 0.75s step-end infinite;
+    font-family: 'Courier New', monospace;
+    font-size: 2em;
+  }
+  
+  
+  /* Escribir texto letra por letra */
+  @keyframes typing {
+    from { width: 0 }
+    to   { width: 70% }
+  }
+  
+  
+  
+
+
+
+  
+  /* Animación para desaparecer la intro SCRIPT */
+  .intro.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  
+  
+
    /* EFECTO DE CAMBIO DE COLORES PARA EL HOVER */
 
   @keyframes fondoCromatico {
@@ -37,6 +91,99 @@ body {
   border-bottom: 4px solid #c62828;
   }
 
+  .collage {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #111;
+    overflow: hidden;
+    border: 2px solid white;
+    margin-top: 20px;
+  }
+  
+  .collage img {
+    position: absolute;
+    width: 100px;
+    border: 2px solid white;
+    border-radius: 12px;
+    transform: rotate(var(--angle));
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+  
+
+  .vinyl-player {
+    text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    border-radius: 16px;
+    width: 280px;
+    animation: slideIn 1s ease-out forwards;
+  transform: translateX(150%);
+  opacity: 0;
+  }
+
+  @keyframes slideIn {
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .vinyl {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #000;
+    box-shadow: inset 0 0 10px rgba(255,255,255,0.2),
+                0 0 10px rgba(0,0,0,0.5);
+    background: radial-gradient(#222 20%, #000 80%);
+  }
+  
+  .vinyl.spin {
+    animation: spin 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #c62828;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  #toggleBtn {
+    background: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
+    color: #f4f4f4;
+    border: 2px solid #666;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 0 #000, inset 0 0 5px #888;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  #toggleBtn:hover {
+    background: linear-gradient(to bottom, #3d3d3d, #2a2a2a);
+    box-shadow: 0 2px 0 #000, inset 0 0 8px #aaa;
+    transform: translateY(1px);
+  }
+  
+  #toggleBtn:active {
+    box-shadow: inset 0 0 10px #222;
+    transform: translateY(2px);
+  }
 
   
   footer {
@@ -94,7 +241,36 @@ body {
   
   
   
-  
+  /* 
+        versión que hace un fondo con cambio de colores
+.intro {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #3d5afe, #c62828);
+    background-size: 400% 400%;
+    animation: fondoIntro 8s ease-in-out infinite;  --> uso de keyframe q cambia color
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 2em;
+    z-index: 1000;
+    animation-fill-mode: forwards;
+    transition: opacity 1s ease;
+  }
+  */
+ 
+  /* Animación de fondo psicodélico 
+  @keyframes fondoIntro {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+    */
   
   
   
